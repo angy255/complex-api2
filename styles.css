@@ -1,13 +1,141 @@
-*{
+* {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Comic Neue", "Courier New", Courier, monospace;
 }
 
-img{
-  display: block;
-  margin: 0 auto;
+body {
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 30px 15px;
+  min-height: 100vh;
+  text-align: center;
+  overflow: hidden;
 }
 
-h3{
-  display: none;
+/*floating letters container */
+.letter {
+  position: absolute;
+  color: rgba(0, 255, 102, 0.2);
+  font-size: 2rem;
+  font-weight: bold;
+  pointer-events: none;
+  animation: float 10s linear infinite;
 }
 
+/*animate letters vertically */
+@keyframes float {
+  0% {
+    transform: translateY(120vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+ h1 {
+  font-size: 60px;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px #0fe8ec, 0 0 20px #0073ff;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin: 20px 20px;
+  color: #7d5ed1;
+  text-shadow: 0 0 8px #7606f6;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #14dbdf;
+  text-shadow: 0 0 6px #089ff7;
+}
+
+p {
+  margin: 20px 0;
+}
+
+input#word {
+  padding: 15px 20px;
+  width: 300px;
+  max-width: 90%;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  border: 2px solid #0888f1;
+  background: #111;
+  color: #05e2f2;
+  outline: none;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+input#word::placeholder {
+  color: #33d6ff;
+  font-style: italic;
+}
+
+input#word:focus {
+  border-color: #00bfac;
+  box-shadow: 0 0 10px #21e3ea;
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  background: linear-gradient(90deg, #fc3509, #17e2d4);
+  color: #000;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(30, 242, 115, 0.941);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-3px) rotate(-2deg);
+  box-shadow: 0 6px 20px rgb(145, 98, 246);
+}
+
+/* gif*/
+p iframe {
+  margin-top: 15px;
+  width: 100%;
+  height: 300px;
+  border: 2px solid #00f2ff;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #00aeff;
+}
+
+/* responsive */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2,
+  h3 {
+    font-size: 1rem;
+  }
+
+  input#word {
+    width: 90%;
+  }
+
+  p iframe {
+    width: 90%;
+    height: 200px;
+  }
+}
